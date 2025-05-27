@@ -2,6 +2,7 @@ package com.project.service;
 
 import java.net.URI;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.web.client.RestClient;
@@ -9,17 +10,21 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 public class ServiceUtil {
 
-    public static <T> RestResponsePage<T> getPage(
-            URI uri,
-            RestClient restClient,
-            ParameterizedTypeReference<RestResponsePage<T>> responseType
-    ) {
-        return restClient.get()
-                .uri(uri)
-                .retrieve()
-                .body(responseType);
-    }
-
+	public static <T> PageImpl<T> getPage(
+	        URI uri,
+	        RestClient restClient,
+	        ParameterizedTypeReference<PageImpl<T>> responseType
+	) {
+		String response = restClient.get()
+			    .uri(uri.toString())
+			    .retrieve()
+			    .body(String.class);
+			System.out.println("Response: " + response);
+	    return restClient.get()
+	            .uri(uri)
+	            .retrieve()
+	            .body(responseType);
+	}
     public static URI getURI(String resourcePath, Pageable pageable) {
         return getUriComponent(resourcePath)
                 .queryParam("page", pageable.getPageNumber())

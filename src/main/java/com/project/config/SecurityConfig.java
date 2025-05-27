@@ -19,11 +19,14 @@ public class SecurityConfig {
 
 	// dzięki adnotacji @Bean Spring uruchomi metodę i zarejestruje w kontenerze obiekt przez nią zwrócony,
 	@Bean // natomiast adnotacja @Autowired i/lub konstruktor użyte w innej klasie spowodują jego wstrzyknięcie
-	public RestClient customRestClient() {
-		return RestClient.builder().baseUrl(restBaseUrl)
-				.defaultHeader(HttpHeaders.AUTHORIZATION,
-						getBasicAuthenticationHeader(restUserName, restUserPassword))
-				.build();
+	public RestClient restClient() {
+	    return RestClient.builder()
+	        .baseUrl(restBaseUrl)
+	        .defaultHeader(HttpHeaders.AUTHORIZATION, getBasicAuthenticationHeader(restUserName, restUserPassword))
+	        .messageConverters(converters -> {
+	            converters.add(new org.springframework.http.converter.json.MappingJackson2HttpMessageConverter());
+	        })
+	        .build();
 	}
 	private String getBasicAuthenticationHeader(String username, String password) {
 		return "Basic " + Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
