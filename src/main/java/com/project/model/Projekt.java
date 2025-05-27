@@ -7,12 +7,8 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
-import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -38,17 +34,14 @@ public class Projekt {
 	private String opis;
 	
 	// działa to automatycznie
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
 	private LocalDateTime createdDate;
 	
-	@JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
 	private LocalDate lastModifiedDate;
 	
-	@JsonManagedReference
 	private List<Zadanie> zadania;
 	
-
-	 @JsonIgnore
-	 private Set<Student> studenci;
+	private Set<Student> studenci;
 
 }

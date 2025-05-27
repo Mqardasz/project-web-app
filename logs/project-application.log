@@ -108,3 +108,28 @@
 2025-05-27 19:40:36.095 [http-nio-8081-exec-7] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
 2025-05-27 19:42:57.896 [http-nio-8081-exec-10] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
 2025-05-27 19:43:07.041 [http-nio-8081-exec-2] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 19:50:34.547 [http-nio-8081-exec-6] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 19:58:27.439 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-05-27 19:58:27.439 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-05-27 19:58:27.674 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.258 seconds (process running for 4536.479)
+2025-05-27 19:58:33.068 [http-nio-8081-exec-3] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 19:59:18.200 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-05-27 19:59:18.200 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-05-27 19:59:18.439 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.262 seconds (process running for 4587.243)
+2025-05-27 20:01:14.338 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-05-27 20:01:14.338 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-05-27 20:01:14.562 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.248 seconds (process running for 4703.366)
+2025-05-27 20:01:22.257 [http-nio-8081-exec-1] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 20:02:13.044 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-05-27 20:02:13.045 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-05-27 20:02:13.287 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.264 seconds (process running for 4762.091)
+2025-05-27 20:05:02.207 [http-nio-8081-exec-1] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 20:05:05.951 [http-nio-8081-exec-4] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 20:05:35.591 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-05-27 20:05:35.591 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-05-27 20:05:35.843 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.274 seconds (process running for 4964.648)
+2025-05-27 20:05:46.057 [http-nio-8081-exec-1] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 20:07:24.486 [http-nio-8081-exec-5] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-05-27 20:07:42.556 [http-nio-8081-exec-10] INFO  c.project.service.ProjektServiceImpl.(75) - REQUEST -> POST /api/projekty
+2025-05-27 20:07:42.682 [http-nio-8081-exec-10] INFO  c.project.service.ProjektServiceImpl.(87) - REQUEST (location) -> GET http://localhost:8080/api/projekty/352
+2025-05-27 20:07:42.766 [http-nio-8081-exec-9] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
