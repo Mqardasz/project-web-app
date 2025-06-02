@@ -2,11 +2,50 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Lista projektów</title>
+    <meta charset="UTF-8"/>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .action-btn { margin-right: 6px; padding: 3px 12px; text-decoration: none; border: 1px solid #aaa; border-radius: 4px; background: #f7f7f7; }
+        .action-btn.edit { color: #0b5ea8; border-color: #0b5ea8; }
+        .action-btn.delete { color: #c0392b; border-color: #c0392b; }
+    </style>
 </head>
 <body>
     <h1>Lista projektów</h1>
-    <ul>
-        <li th:each="projekt : ${projekty}" th:text="${projekt.nazwa}">Projekt</li>
-    </ul>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nazwa</th>
+                <th>Opis</th>
+                <th>Data utworzenia</th>
+                <th>Data modyfikacji</th>
+                <th>Termin oddania</th>
+                <th>Zadania (liczba)</th>
+                <th>Studenci (liczba)</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="projekt : ${projekty}">
+                <td th:text="${projekt.projektId}">1</td>
+                <td th:text="${projekt.nazwa}">Nazwa</td>
+                <td th:text="${projekt.opis}">Opis</td>
+                <td th:text="${#temporals.format(projekt.createdDate, 'yyyy-MM-dd HH:mm:ss')}">2024-01-01 12:00:00</td>
+                <td th:text="${#temporals.format(projekt.lastModifiedDate, 'yyyy-MM-dd HH:mm:ss')}">2024-01-02 14:00:00</td>
+                <td th:text="${projekt.submissionDate}">2024-06-01</td>
+                <td th:text="${projekt.zadania != null ? projekt.zadania.size() : 0}">0</td>
+                <td th:text="${projekt.studenci != null ? projekt.studenci.size() : 0}">0</td>
+				<td>
+				    <a th:href="@{/projektEdit(projektId=${projekt.projektId})}" class="action-btn edit">Edytuj</a>
+				    <a th:href="@{/projektEdit(projektId=${projekt.projektId}, delete='true')}"
+				       th:attr="onclick=|return confirm('Czy na pewno chcesz usunąć projekt [[${projekt.nazwa}]]?');|"
+				       class="action-btn delete">Usuń</a>
+				</td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

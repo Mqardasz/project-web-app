@@ -38,7 +38,10 @@ public class Projekt {
 	private LocalDateTime createdDate;
 	
 	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")
-	private LocalDate lastModifiedDate;
+	private LocalDateTime lastModifiedDate;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private LocalDate submissionDate;
 	
 	private List<Zadanie> zadania;
 	
