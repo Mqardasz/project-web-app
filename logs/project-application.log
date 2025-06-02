@@ -11,3 +11,9 @@
 2025-06-02 15:29:30.803 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
 2025-06-02 15:29:30.804 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
 2025-06-02 15:29:31.065 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.287 seconds (process running for 506842.853)
+2025-06-02 15:29:46.038 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 15:29:46.038 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 15:29:46.296 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.279 seconds (process running for 506858.084)
+2025-06-02 15:36:20.570 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 15:36:20.570 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 15:36:20.984 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.453 seconds (process running for 507252.772)
