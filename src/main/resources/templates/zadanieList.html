@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista zadań</title>
+    <meta charset="UTF-8"/>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .action-btn { margin-right: 6px; padding: 3px 12px; text-decoration: none; border: 1px solid #aaa; border-radius: 4px; background: #f7f7f7; }
+        .action-btn.edit { color: #0b5ea8; border-color: #0b5ea8; }
+        .action-btn.delete { color: #c0392b; border-color: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>Lista zadań</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tytuł</th>
+                <th>Opis</th>
+                <th>Status</th>
+                <th>Data utworzenia</th>
+                <th>Termin</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="zadanie : ${zadania}">
+                <td th:text="${zadanie.zadanieId}">1</td>
+                <td th:text="${zadanie.tytul}">Tytuł</td>
+                <td th:text="${zadanie.opis}">Opis</td>
+                <td th:text="${zadanie.status}">Nowe</td>
+                <td th:text="${#temporals.format(zadanie.createdDate, 'yyyy-MM-dd HH:mm:ss')}">2024-01-01 12:00:00</td>
+                <td th:text="${zadanie.termin}">2024-06-01</td>
+                <td>
+                    <a th:href="@{/zadanieEdit(zadanieId=${zadanie.zadanieId})}" class="action-btn edit">Edytuj</a>
+                    <a th:href="@{/zadanieEdit(zadanieId=${zadanie.zadanieId}, delete='true')}"
+                       th:attr="onclick=|return confirm('Czy na pewno chcesz usunąć zadanie [[${zadanie.tytul}]]?');|"
+                       class="action-btn delete">Usuń</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edycja studenta</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <h1 th:text="${student.studentId != null} ? 'Edytuj studenta' : 'Dodaj studenta'"></h1>
+    <form th:action="@{/studentEdit}" th:object="${student}" method="post">
+        <div th:if="${#fields.hasErrors()}">
+            <p style="color:red" th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+        </div>
+        <input type="hidden" th:field="*{studentId}"/>
+        <label>Imię: <input type="text" th:field="*{imie}" required/></label><br/>
+        <label>Nazwisko: <input type="text" th:field="*{nazwisko}" required/></label><br/>
+        <label>Email: <input type="email" th:field="*{email}" required/></label><br/>
+        <label>NrIndeksu: <input type="text" th:field="*{nrIndeksu}"/></label><br/>
+        <label>Stacjonarny: <input type="checkbox" th:field="*{stacjonarny}"/></label><br/>
+        <button type="submit">Zapisz</button>
+        <button type="submit" name="cancel">Anuluj</button>
+        <button type="submit" name="delete"
+            th:if="${student.studentId != null}"
+            th:attr="onclick=|return confirm('Czy na pewno chcesz usunąć studenta [[${student.imie}]] [[${student.nazwisko}]]?');|">Usuń</button>
+    </form>
+</body>
+</html>

@@ -1,92 +1,65 @@
 package com.project.controller;
 
-import java.net.URI;
-import java.util.Optional;
-
 import jakarta.validation.Valid;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
+import org.apache.logging.log4j.util.Strings;
 import org.springframework.data.domain.Pageable;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import org.springframework.web.client.HttpStatusCodeException;
 import com.project.model.Student;
 import com.project.service.StudentService;
 
-
-
+@Controller
 public class StudentController {
+    private final StudentService studentService;
 
-	private StudentService studentService;
-    private static final Logger logger = LoggerFactory.getLogger(StudentController.class);
-    @Autowired
     public StudentController(StudentService studentService) {
         this.studentService = studentService;
-    	logger.info("zainicjowano klase");
     }
-    
-    @GetMapping("/studenci/{studentId}")
-    ResponseEntity<Student> getStudentbyId(@PathVariable("studentId") Integer studentId ) {
-    	return ResponseEntity.of(studentService.getStudentById(studentId));
+
+    @GetMapping("/studentList")
+    public String studentList(Model model, Pageable pageable) {
+        model.addAttribute("studenci", studentService.getAllStudents(pageable).getContent());
+        return "studentList";
     }
-    
-    @PostMapping(path = "/studenci")
-    ResponseEntity<Void> createStudent(@RequestBody Student student) {
-    	Student createStudent = studentService.setStudent(student);
-    	URI location = ServletUriComponentsBuilder.fromCurrentRequest()
-    			.path("/{studentId}").buildAndExpand(createStudent.getStudentId()).toUri();
-    	return ResponseEntity.created(location).build();
-    }
-    
-    @PutMapping("/studenci/{studentId}")
-    public ResponseEntity<Void> updateStudent(@Valid @RequestBody Student student,
-    											@PathVariable("studentId") Integer studentId) {
-    	return studentService.getStudentById(studentId)
-    			.map(p -> {
-    				studentService.setStudent(student);
-    				return new ResponseEntity<Void>(HttpStatus.OK);
-    			})
-    			.orElseGet(() -> ResponseEntity.notFound().build());
-    }
-    
-    @DeleteMapping("/{studentId}")
-    public ResponseEntity<Void> deleteStudent(@PathVariable Integer studentId) {
-        Optional<Student> studentOptional = studentService.getStudentById(studentId);
-        if (studentOptional.isPresent()) {
-            studentService.deleteStudentById(studentId);
-            return new ResponseEntity<>(HttpStatus.OK);
+
+    @GetMapping("/studentEdit")
+    public String studentEdit(@RequestParam(name = "studentId", required = false) Integer studentId, Model model) {
+        if (studentId != null) {
+            model.addAttribute("student", studentService.getStudentById(studentId).get());
+        } else {
+            model.addAttribute("student", new Student());
         }
-        return ResponseEntity.notFound().build();
+        return "studentEdit";
     }
 
-    @GetMapping("/studenci/all")
-    public Page<Student> getAllStudents(Pageable pageable) {
-        return studentService.getAllStudents(pageable);
-    }
-
-    @GetMapping(params = "nazwisko")
-    public Page<Student> findStudentsByNazwisko(@RequestParam String nazwisko, Pageable pageable) {
-        return studentService.findStudentsByNazwisko(nazwisko, pageable);
-    }
-
-    @PostMapping("/{studentId}/projects/{projectId}")
-    public ResponseEntity<Void> assignProjectToStudent(@PathVariable Integer studentId, @PathVariable Integer projectId) {
+    @PostMapping("/studentEdit")
+    public String studentEditSave(@ModelAttribute @Valid Student student, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "studentEdit";
+        }
         try {
-            studentService.assignProjektToStudent(studentId, projectId);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (RuntimeException e) {
-            return ResponseEntity.notFound().build();
+            student = studentService.setStudent(student);
+        } catch (HttpStatusCodeException e) {
+            bindingResult.rejectValue(Strings.EMPTY, String.valueOf(e.getStatusCode().value()), e.getStatusCode().toString());
+            return "studentEdit";
         }
+        return "redirect:/studentList";
     }
-    
+
+    @PostMapping(params = "cancel", path = "/studentEdit")
+    public String studentEditCancel() {
+        return "redirect:/studentList";
+    }
+
+    @PostMapping(params = "delete", path = "/studentEdit")
+    public String studentEditDelete(@ModelAttribute Student student) {
+        studentService.deleteStudentById(student.getStudentId());
+        return "redirect:/studentList";
+    }
 }

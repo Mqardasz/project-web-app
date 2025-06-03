@@ -17,3 +17,57 @@
 2025-06-02 15:36:20.570 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
 2025-06-02 15:36:20.570 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
 2025-06-02 15:36:20.984 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.453 seconds (process running for 507252.772)
+2025-06-02 15:36:59.717 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 15:36:59.718 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 15:36:59.960 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.287 seconds (process running for 507291.749)
+2025-06-02 15:55:48.717 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 15:55:48.718 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 15:56:17.174 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 15:56:17.175 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 16:05:33.210 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 16:05:33.211 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 16:05:35.854 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 16:05:35.855 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 16:05:36.049 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.217 seconds (process running for 509007.837)
+2025-06-02 16:06:49.494 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 16:06:49.494 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 16:06:49.681 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.206 seconds (process running for 509084.231)
+2025-06-02 16:10:27.211 [http-nio-8081-exec-1] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-06-02 16:10:35.329 [http-nio-8081-exec-2] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci?page=0&size=20&sort=
+2025-06-02 16:11:03.144 [http-nio-8081-exec-5] INFO  c.project.service.ZadanieServiceImpl.(112) - REQUEST -> GET /api/zadania?page=0&size=20&sort=
+2025-06-02 16:17:38.060 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 16:17:38.060 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 16:17:38.281 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.24 seconds (process running for 509732.831)
+2025-06-02 16:17:53.054 [http-nio-8081-exec-1] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci/all?page=0&size=20&sort=
+2025-06-02 16:19:33.014 [http-nio-8081-exec-2] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci/all?page=0&size=20&sort=
+2025-06-02 16:19:44.961 [http-nio-8081-exec-4] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci/all?page=0&size=20&sort=
+2025-06-02 16:19:57.262 [http-nio-8081-exec-5] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/all/152
+2025-06-02 16:23:05.679 [http-nio-8081-exec-6] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/all/152
+2025-06-02 16:26:17.313 [http-nio-8081-exec-7] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/all/152
+2025-06-02 16:26:18.401 [http-nio-8081-exec-8] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/all/152
+2025-06-02 16:26:19.303 [http-nio-8081-exec-9] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/all/152
+2025-06-02 16:26:30.843 [http-nio-8081-exec-3] INFO  c.project.service.ProjektServiceImpl.(116) - REQUEST -> GET /api/projekty?page=0&size=20&sort=
+2025-06-02 16:26:33.355 [http-nio-8081-exec-10] INFO  c.project.service.ProjektServiceImpl.(44) - REQUEST -> GET /api/projekty/54
+2025-06-02 16:27:54.486 [http-nio-8081-exec-4] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci/all?page=0&size=20&sort=
+2025-06-02 16:28:04.771 [http-nio-8081-exec-5] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/all/152
+2025-06-02 16:29:10.618 [http-nio-8081-exec-6] INFO  c.project.service.ProjektServiceImpl.(44) - REQUEST -> GET /api/projekty/152
+2025-06-02 16:29:27.733 [http-nio-8081-exec-8] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/all/152
+2025-06-02 16:30:21.483 [restartedMain] INFO  c.project.ProjectRestApiApplication.(53) - Starting ProjectRestApiApplication using Java 21.0.4 with PID 4144 (C:\eclipse-2024-09\workspace\project-web-app\bin\main started by Michal in C:\eclipse-2024-09\workspace\project-web-app)
+2025-06-02 16:30:21.483 [restartedMain] INFO  c.project.ProjectRestApiApplication.(652) - No active profile set, falling back to 1 default profile: "default"
+2025-06-02 16:30:21.702 [restartedMain] INFO  c.project.ProjectRestApiApplication.(59) - Started ProjectRestApiApplication in 0.263 seconds (process running for 510496.251)
+2025-06-02 16:31:08.570 [http-nio-8081-exec-1] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/152
+2025-06-02 16:31:09.976 [http-nio-8081-exec-2] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/152
+2025-06-02 16:31:10.801 [http-nio-8081-exec-3] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/152
+2025-06-02 16:33:51.251 [http-nio-8081-exec-9] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/152
+2025-06-02 16:35:23.620 [http-nio-8081-exec-5] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci?page=0&size=20&sort=
+2025-06-02 16:35:26.070 [http-nio-8081-exec-4] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/204
+2025-06-02 16:38:47.861 [http-nio-8081-exec-2] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/204
+2025-06-02 16:38:49.387 [http-nio-8081-exec-3] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/204
+2025-06-02 16:39:25.277 [http-nio-8081-exec-9] INFO  c.project.service.StudentServiceImpl.(57) - REQUEST -> PUT /api/studenci/204
+2025-06-02 16:39:25.456 [http-nio-8081-exec-7] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci?page=0&size=20&sort=
+2025-06-02 16:39:41.262 [http-nio-8081-exec-8] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/204
+2025-06-02 16:39:50.540 [http-nio-8081-exec-6] INFO  c.project.service.StudentServiceImpl.(57) - REQUEST -> PUT /api/studenci/204
+2025-06-02 16:39:50.711 [http-nio-8081-exec-5] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci?page=0&size=20&sort=
+2025-06-02 16:41:05.855 [http-nio-8081-exec-10] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci?page=0&size=20&sort=
+2025-06-02 16:41:07.147 [http-nio-8081-exec-1] INFO  c.project.service.StudentServiceImpl.(112) - REQUEST -> GET /api/studenci?page=0&size=20&sort=
+2025-06-02 17:38:18.632 [http-nio-8081-exec-3] INFO  c.project.service.StudentServiceImpl.(41) - REQUEST -> GET /api/studenci/152

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edycja zadania</title>
+    <meta charset="UTF-8"/>
+</head>
+<body>
+    <h1 th:text="${zadanie.zadanieId != null} ? 'Edytuj zadanie' : 'Dodaj zadanie'"></h1>
+    <form th:action="@{/zadanieEdit}" th:object="${zadanie}" method="post">
+        <input type="hidden" th:field="*{zadanieId}"/>
+        <label>Tytuł: <input type="text" th:field="*{tytul}" required/></label><br/>
+        <label>Opis: <input type="text" th:field="*{opis}" required/></label><br/>
+        <label>Status: <input type="text" th:field="*{status}"/></label><br/>
+        <label>Termin: <input type="date" th:field="*{termin}"/></label><br/>
+        <button type="submit">Zapisz</button>
+        <button type="submit" name="cancel">Anuluj</button>
+        <button type="submit" name="delete"
+            th:if="${zadanie.zadanieId != null}"
+            th:attr="onclick=|return confirm('Czy na pewno chcesz usunąć zadanie [[${zadanie.tytul}]]?');|">Usuń</button>
+    </form>
+    <div th:if="${#fields.hasErrors()}">
+        <p style="color:red" th:each="err : ${#fields.errors('*')}" th:text="${err}"></p>
+    </div>
+</body>
+</html>

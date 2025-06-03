@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista studentów</title>
+    <meta charset="UTF-8"/>
+    <style>
+        table { border-collapse: collapse; width: 100%; }
+        th, td { border: 1px solid #ddd; padding: 8px; }
+        th { background-color: #f2f2f2; }
+        .action-btn { margin-right: 6px; padding: 3px 12px; text-decoration: none; border: 1px solid #aaa; border-radius: 4px; background: #f7f7f7; }
+        .action-btn.edit { color: #0b5ea8; border-color: #0b5ea8; }
+        .action-btn.delete { color: #c0392b; border-color: #c0392b; }
+    </style>
+</head>
+<body>
+    <h1>Lista studentów</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Email</th>
+                <th>Nr Indeksu</th>
+                <th>Stacjonarny</th>
+                <th>Akcje</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="student : ${studenci}">
+                <td th:text="${student.studentId}">1</td>
+                <td th:text="${student.imie}">Jan</td>
+                <td th:text="${student.nazwisko}">Kowalski</td>
+                <td th:text="${student.email}">jan.kowalski@example.com</td>
+                <td th:text="${student.nrIndeksu}">Informatyka</td>
+                <td th:text="${student.stacjonarny}">Informatyka</td>
+                <td>
+                    <a th:href="@{/studentEdit(studentId=${student.studentId})}" class="action-btn edit">Edytuj</a>
+                    <a th:href="@{/studentEdit(studentId=${student.studentId}, delete='true')}"
+                       th:attr="onclick=|return confirm('Czy na pewno chcesz usunąć studenta [[${student.imie}]] [[${student.nazwisko}]]?');|"
+                       class="action-btn delete">Usuń</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
