@@ -39,15 +39,20 @@ public class ZadanieServiceImpl implements ZadanieService {
     public Optional<Zadanie> getZadanieById(Integer zadanieId) {
         String resourcePath = getResourcePath(zadanieId);
         logger.info("REQUEST -> GET {}", resourcePath);
-        Zadanie zadanie = restClient
+        try {
+            Zadanie zadanie = restClient
                 .get()
                 .uri(resourcePath)
                 .retrieve()
-                .onStatus(HttpStatusCode::isError, (req, res) -> {
-                    throw new HttpException(res.getStatusCode(), res.getHeaders());
-                })
                 .body(Zadanie.class);
-        return Optional.ofNullable(zadanie);
+            return Optional.ofNullable(zadanie);
+        } catch (org.springframework.web.client.HttpClientErrorException.NotFound ex) {
+            // 404 - nie znaleziono zadania
+            return Optional.empty();
+        } catch (org.springframework.web.client.HttpClientErrorException ex) {
+            // inne błędy HTTP
+            throw ex;
+        }
     }
 
     @Override
@@ -129,11 +134,22 @@ public class ZadanieServiceImpl implements ZadanieService {
                 .body(new ParameterizedTypeReference<RestResponsePage<Zadanie>>() {});
     }
 
-	@Override
-	public Zadanie updateZadanie(Integer id, Zadanie updatedZadanie) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    @Override
+    public Zadanie updateZadanie(Integer id, Zadanie updatedZadanie) {
+        String resourcePath = getResourcePath(id);
+        logger.info("REQUEST -> PUT {}", resourcePath);
+        restClient
+            .put()
+            .uri(resourcePath)
+            .accept(MediaType.APPLICATION_JSON)
+            .body(updatedZadanie)
+            .retrieve()
+            .onStatus(HttpStatusCode::isError, (req, res) -> {
+                throw new HttpException(res.getStatusCode(), res.getHeaders());
+            })
+            .toBodilessEntity();
+        return updatedZadanie;
+    }
 
 	@Override
 	public Page<Zadanie> getZadaniaByProjektId(Integer projektId, Pageable pageable) {

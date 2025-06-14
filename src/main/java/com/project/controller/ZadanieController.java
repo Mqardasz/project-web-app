@@ -1,6 +1,10 @@
 package com.project.controller;
 
 import jakarta.validation.Valid;
+
+import java.time.LocalDateTime;
+import java.util.Optional;
+
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
@@ -30,16 +34,26 @@ public class ZadanieController {
 
     @GetMapping("/zadanieEdit")
     public String zadanieEdit(@RequestParam(name = "zadanieId", required = false) Integer zadanieId, Model model) {
+        Zadanie zadanie;
         if (zadanieId != null) {
-            model.addAttribute("zadanie", zadanieService.getZadanieById(zadanieId).get());
+            Optional<Zadanie> optionalZadanie = zadanieService.getZadanieById(zadanieId);
+            if (optionalZadanie.isPresent()) {
+                zadanie = optionalZadanie.get();
+            } else {
+                // Możesz przekierować na stronę błędu albo zwrócić info do modelu
+                model.addAttribute("error", "Nie znaleziono zadania o ID: " + zadanieId);
+                zadanie = new Zadanie();
+            }
         } else {
-            model.addAttribute("zadanie", new Zadanie());
+            zadanie = new Zadanie();
         }
+        model.addAttribute("zadanie", zadanie);
         return "zadanieEdit";
     }
-
+    
     @PostMapping("/zadanieEdit")
     public String zadanieEditSave(@ModelAttribute @Valid Zadanie zadanie, BindingResult bindingResult) {
+ 
         if (bindingResult.hasErrors()) {
             return "zadanieEdit";
         }
